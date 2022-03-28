@@ -1,0 +1,16 @@
+p.serif{
+    font-family: serif;
+}
+p.sansserif{
+    font-family: sans-serif;
+}
+p.monospace{
+    font-family: monospace;
+}
+p.cursive{
+    font-family: cursive;
+}
+p.fantasy{
+    font-family: fantasy;
+}
+

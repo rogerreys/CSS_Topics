@@ -1,0 +1,11 @@
+p.cursiva{
+    font-style: italic;
+}
+p.oblicua{
+    font-style: oblique;
+}
+p.normal{
+    font-style: normal;
+}
+
+
