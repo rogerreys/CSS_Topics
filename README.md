@@ -1,2 +1,2 @@
-# CSS_Topics
-Introduccion a CSS
+# Grid topics
+All in index.html
