@@ -1,0 +1,31 @@
+*{
+	width: 90vw;
+}
+body{
+	background: gray;
+}
+/*Create a Media Query*/
+#create_media_query p{
+	color: white;
+	width: 
+}
+@media(max-height: 500px){
+/*max-...* - 0<x<500/
+/*min-...* - 500>x>inf/
+	/*Rule*/
+	#create_media_query p{
+		color: black;
+	}
+}
+
+/*Make an Image Responsive*/
+#makeAnImageRespons img{
+	max-width: 100%;
+	height: auto;
+}
+
+/*Use a Retina Image for Higher Resolution Displays*/
+#higherResolution img{
+	height: 600px;
+	width: 860px;
+}

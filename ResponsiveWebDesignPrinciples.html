@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Web Design Principles</title>
+	<link rel="stylesheet" href=".\style.css">
+</head>
+<body>
+	<article>
+		<section>
+			<h1>Create a Media Query</h1>
+			<div id="create_media_query">
+				<p>Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes.</p>
+				<p>The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.</p>
+				<p>Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. </p>
+				<p>Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:</p>
+				<p>@media{/*CSS Rules*/}</p>
+				<p>and the following media query returns the content when the device's height is more than or equal to 350px:</p>
+				<p>@media (min-height:300px){/*CSS Rules*/}</p>
+			</div>
+		</section>
+
+		<section>
+			<h1>Make an Image Responsive</h1>
+			<div id="makeAnImageRespons">
+				<p>Making images responsive with CSS is actually very simple. You just need to add these properties to an image:</p>
+				<p>img {<br>
+				  	max-width: 100%;<br>
+				  	height: auto;<br>
+					}</p>
+				<p>The "max-width" of "100%" will make sure the image is never wider than the container it is in, and the "height" of "auto" will make the image keep its original aspect ratio.</p>
+				<img src="./totro.jpg">
+			</div>			
+		</section>
+
+		<section>
+			<h1>Use a Retina Image for Higher Resolution Displays</h1>
+			<div id="higherResolution">
+				<p>the displays they use could be different externally and internally. Pixel density is an aspect that could be different on one device from others and this density is known as Pixel Per Inch(PPI) or Dots Per Inch(DPI).</p>
+				<p>The most famous such display is the one known as a "Retina Display" on the latest Apple MacBook Pro notebooks, and recently iMac computers.</p>
+				<p>Due to the difference in pixel density between a "Retina" and "Non-Retina" displays, some images that have not been made with a High-Resolution Display in mind could look "pixelated" when rendered on a High-Resolution display.</p>
+				<p><strong>The simplest way to make your images properly appear on High-Resolution Displays</strong>, such as the MacBook Pros "retina display" is to define their width and height values as only half of what the original file is.</p>
+				<img src="./totro.jpg" alt="Totoro_1920x1200">
+			</div>			
+		</section>
+
+		<section>
+			<h1>Make Typography Responsive</h1>
+			<div>
+				<p>Instead of using "em" or "px" to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items.
+				</p>
+				<p>The four different viewport units are:</p>
+				<ul>
+					<li>vw (viewport width): 10vw would be 10% of the viewport's width.</li>
+					<li>vh (viewport height): 3vh would be 3% of the viewport's height.</li>
+					<li>vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension (height or width).</li>
+					<li>vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension (height or width).</li>
+				</ul>
+				<p>Here is an example that sets a body tag to 30% of the viewport's width.</p>
+				<p>body { width: 30vw; }</p>
+			</div>
+		</section>
+	</article>
+</body>
+</html>
