@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<style type="text/css">
+		/*RAINBOW*/
+		div #rainbowColor {
+		    height: 40px;
+		    width: 50%;
+		    background: black;
+		    margin: 0px auto;
+		    border-radius: 5px;
+		 }
+		 #rainbowColor {
+		    animation-name:rainbow;
+		    animation-duration:4s;
+		    animation-iteration-count: infinite;
+		 }
+		 @keyframes rainbow{
+		    0%{background-color:purple;}
+		    25%{background-color:#00ffcc;}
+		    50%{background-color:green;}
+		    75%{background-color:yelow;}
+		    100%{background-color:red;}
+	  	 }
+
+	  	 /*BUTTON*/
+	  	 button {
+	  	 	position: inherit;
+	  	 	top:0px; bottom: 0px;
+	  	 	right: 0px; left: 0px;
+	  	 	width: 40%;
+	  	 	height: 40px;
+		    border-radius: 5px;
+		    color: white;
+		    background-color: #0F5897;
+		    padding: 5px 10px 8px 10px;
+		  }
+
+		  button:hover {
+		    animation-name: background-color;
+		    animation-duration: 1000ms; /*or 1s*/
+		     /* fill-mode to no repet*/
+		    animation-fill-mode: forwards;
+		  }
+		  @keyframes background-color{
+		  	25%{transform: rotate(-5deg);}
+		    50%{transform: rotate(5deg);}
+		    75%{transform: rotate(0deg);}
+		    100%{background-color:#4791d0;}
+		  }
+
+		  /*MOVE ELEMENT*/
+		  div #element{
+		  	position: relative;
+		  	height: 40px;
+		    width: 50%;
+		    background: black;
+		    margin: 50px auto;
+		    border-radius: 5px;
+		  }
+		  #element {
+		  	animation-name: rainbowMove;
+		    animation-duration: 4s;
+		    animation-iteration-count:infinite;
+		  }
+
+		  @keyframes rainbowMove {
+		    0% {
+		      background-color: blue;
+		      top:0px;
+		      left: 0px;
+		    }
+		    50% {
+		      background-color: green;
+		      top:50px;
+		      left: 25px;
+		      opacity: 0.1;/*OPACIDAD*/
+		    }
+		    100% {
+		      background-color: yellow;
+		      top:0px;
+		      left: -25px;
+
+		    }
+		  }
+
+		  /*BOUNCE*/
+		  #bounceContent{
+		  	width: 100%;
+		  	height: 100px;
+		  	position: relative;
+		  	background: #ccc;
+		  }
+		  #bounce{
+		  	margin:100px auto;
+		  	background: linear-gradient(35deg, red, blue);
+		  	border-radius: 50%;
+		  	position: relative;
+		  	width: 50px;
+		  	height: 50px;
+		  	animation-name: bounces;
+		  	animation-duration: 3000ms;
+		  	animation-iteration-count: 10;
+		  }
+		  @keyframes bounces{
+		  	0%{
+		  		top:0px;
+		  	}
+		  	50%{
+		  		top:50px;
+		  		height: 35px;
+		  		width:65px;
+		  	}
+		  	100%{top: 0px;}
+		  }
+
+		  /*TIMING BOUNCE*/
+		  #bouncesTiming{
+		  	height: 120px;
+		  	width: 100%;
+		  	position: relative;
+		  	background: #ccc;
+		  }
+		  div #bounceTiming{
+		  	display: inline-block;
+		  	position: relative;
+		  	height: 50px;
+		  	width: 50px;
+		  	border-radius: 50%;
+		  	background: linear-gradient(25deg,#21EA21,#0284FA);
+		  	margin:20px;
+		  }
+		  .bounceTiming1{
+		  	animation-name: bt_one;
+		  	animation-duration: 3s;
+		  	animation-timing-function: ease;
+		  	animation-iteration-count: 5;
+		  }
+		  .bounceTiming2{
+		  	animation-name: bt_two;
+		  	animation-duration: 3s;
+		  	animation-timing-function: ease-in;
+		  	animation-iteration-count: 5;
+		  }
+		  .bounceTiming3{
+		  	animation-name: bt_three;
+		  	animation-duration: 3s;
+		  	animation-timing-function: ease-out;
+		  	animation-iteration-count: 5;
+		  }
+		  .bounceTiming4{
+		  	animation-name: bt_four;
+		  	animation-duration: 3s;
+		  	animation-timing-function: linear;
+		  	animation-iteration-count: 5;
+		  }
+		  @keyframes bt_one{
+		  	0%{top: 0px;}
+		  	50%{top:50px;}
+		  	100%{top:0px;}
+		  }
+		  @keyframes bt_two{
+		  	0%{top: 0px;}
+		  	50%{top:50px;}
+		  	100%{top:0px;}
+		  }
+		  @keyframes bt_three{
+		  	0%{top: 0px;}
+		  	50%{top:50px;}
+		  	100%{top:0px;}
+		  }
+		  @keyframes bt_four{
+		  	0%{top: 0px;}
+		  	50%{top:50px;}
+		  	100%{top:0px;}
+		  }
+
+		  /*CUBIC BEZIER*/
+		  #countBall{
+		  	width: 100%;
+		  	height: 120px;
+		  	position: relative;
+		  	background: #ccc;		  	
+		  }
+		  #balls{
+		  	display: inline-block;
+		  	position: relative;
+		  	margin:20px;
+		  	width: 40px;
+		  	height: 40px;
+		  	border-radius: 50%;
+		  	background:linear-gradient(135deg,#EF12AB,#EF020B);
+		  	animation-name: jump;
+		  	animation-duration: 2000ms;
+		  	animation-iteration-count: 10;
+		  }
+		  .ball1{
+		  	animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+		  }
+		  .ball2{
+		  	animation-timing-function: cubic-bezier(0.69, 0.1, 1, 0.1);
+		  }
+		  .ball2{
+		  	animation-timing-function: cubic-bezier(0.9, 0.1, 1, 1.1);
+		  }
+		  @keyframes jump{
+		  	0% {
+		      top: 0%;
+		    }
+		  	50% {
+		      top: 60%;
+		    }
+		    100% {
+		      top: 0%;
+		    }
+		  }
+
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Learn How the CSS @keyframes and animation Properties Work</h1>
+		<p>To animate an element, you need to know about the animation properties and the @keyframes rule.</p>
+		<p>There are eight animation properties in total.</p>
+		<ul>
+			<li>"animation-name" sets the name of the animation, which is later used by @keyframes to tell CSS which rules go with which animations.</li>
+			<li>"animation-duration" sets the length of time for the animation.</li>
+			<li>"@keyframes" is how to specify exactly what happens within the animation over the duration. with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene.
+			The CSS properties for 100% is how the element appears at the end, right before the credits roll.
+			ejemplo<br>
+				#anim {<br>
+				  animation-name: colorful;<br>
+				  animation-duration: 3s;<br>
+				}<br>
+
+				@keyframes colorful {<br>
+				  0% {<br>
+				    background-color: blue;<br>
+				  }<br>
+				  100% {<br>
+				    background-color: yellow;<br>
+				  }<br>
+				}<br>
+			</li>
+
+			<li>For the element with the "anim" id, the code snippet above sets the "animation-name" to "colorful" and sets the "animation-duration" to 3 seconds. Then the "@keyframes" rule links to the animation properties with the name "colorful".</li>	
+		</ul>
+		<div id="rainbowColor"></div>
+	</div>
+
+	<hr>	
+	<div id="rect">
+		<p>Use "hover" </p>
+		<button>Register</button>
+	</div>
+	<hr>
+	<div id="move element">
+		 <h2>Create Movement Using CSS Animation</h2>
+		 <p>When elements have a specified position, such as fixed or relative, the CSS offset properties right, left, top, and bottom can be used in animation rules to create movement.</p>
+		 <p>Example<br>
+		 	@keyframes rainbow {<br>
+		  0% {<br>
+		    background-color: blue;<br>
+		    top: 0px;<br>
+		  }<br>
+		  50% {<br>
+		    background-color: green;<br>
+		    top: 50px;<br>
+		  }<br>
+		  100% {<br>
+		    background-color: yellow;<br>
+		    top: 0px;<br>
+		  }<br>
+		}<br>
+		</p>
+		<div id="element"></div>
+	</div>
+
+	<hr>
+	<div>
+		<h1>Animate Elements Continually Using an Infinite Animation Count</h1>
+		<p>Another animation property is the animation-iteration-count, which allows you to control how many times you would like to loop through the animation.</p>
+		<p>Here's an example:<br>animation-iteration-count: 3;</p>
+		<p>In this case the animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to infinite.</p>
+		<div id="bounceContent">
+			<div id="bounce"></div>	
+		</div>		
+	</div>
+
+	<hr>
+	<div id="timing">
+		<h1>Change Animation Timing with Keywords</h1>
+		<p> The "animation-timing-function" property controls how quickly an animated element changes over the duration of the animation. </p>
+		<p>There are a number of predefined keywords available</p>
+		<ul>
+			<li>"ease": which starts slow, speeds up in the middle, and then slows down again in the end. </li>
+			<li>"ease-out": which is quick in the beginning then slows down.</li>
+			<li>"ease-in": which is slow in the beginning, then speeds up at the end</li>
+			<li>"linear": which applies a constant animation speed throughout.</li>
+		</ul>
+		<div id="bouncesTiming">
+			<div id="bounceTiming" class="bounceTiming1"></div>
+			<div id="bounceTiming" class="bounceTiming2"></div>
+			<div id="bounceTiming" class="bounceTiming3"></div>
+			<div id="bounceTiming" class="bounceTiming4"></div>
+		</div>
+	</div>
+
+	<hr>
+	<div>
+		<h1>Use a Bezier Curve to Move a Graphic</h1>
+		<p>The cubic-bezier function consists of four main points that sit on this 1 by 1 grid: p0, p1, p2, and p3. p0 and p3 are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the p1 and p2 "anchor" points in the form: (x1, y1, x2, y2). Pulling it all together, here's an example of a Bezier curve in CSS code:<br>
+			animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);<br>
+			 The x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2),<br>
+			 This animation is a linear change of an element during the length of an animation, and is the same as using the linear keyword.
+		</p>
+		<h2>Change the speed</h2>
+		<p>Similar animation progressions to the "ease-out" keyword can be achieved by using a custom cubic Bezier curve function.<br>
+		Here's an example of a Bezier curve using values to mimic the ease-out style:<br>
+		animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+		</p>
+		<h2>Change the moving</h2>
+		<p>The following cubic Bezier curve simulates a juggling movement:<br>
+			cubic-bezier(0.3, 0.4, 0.5, 1.6);<br>
+			Notice the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on a 1 by 1 coordinate system<br> 
+			It can only accept x values from 0 to 1<br> 
+			The "y" value can be set to numbers larger than one. </p>
+		<div id="countBall">
+			<div id="balls" class="ball1"></div>
+			<div id="balls" class="ball2"></div>
+			<div id="balls" class="ball3"></div>
+		</div>
+	</div>
+</body>
+</html>
